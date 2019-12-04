@@ -147,4 +147,8 @@ public class DeliveryService {
             }
         }
     }
+    
+    public Delivery getDelivery(Long orderId) {
+		return deliveryRepository.findByOrderId(orderId).get();
+	}
 }

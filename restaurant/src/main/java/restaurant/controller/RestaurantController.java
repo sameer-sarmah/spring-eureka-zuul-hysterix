@@ -65,6 +65,9 @@ public class RestaurantController {
         restaurantService.validatePaymentThenPickupOrder(orderAggregate.getTransferMoney(),orderAggregate.getPickupOrder());
     }
 
-
+    @GetMapping(value="order/{orderId}",produces = "application/json")
+    public Order getOrder(@PathVariable("orderId") Long orderId) {
+    	return restaurantService.getOrder(orderId);
+    }
 
 }

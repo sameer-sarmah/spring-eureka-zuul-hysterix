@@ -8,4 +8,5 @@ import core.models.TransferMoney;
 public interface IRestaurantService {
     public Order createOrder(Order order) throws CoreException;
     public void validatePaymentThenPickupOrder(TransferMoney transferMoney, PickupOrder pickupOrder);
+    public Order getOrder(Long orderId);
 }

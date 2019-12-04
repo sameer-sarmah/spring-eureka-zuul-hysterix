@@ -101,4 +101,9 @@ public class RestaurantService implements IRestaurantService {
         	logger.info("payment validated and PickupOrderCommand published");
         },(exception)->{});
     }
+    
+    public core.models.Order getOrder(Long orderId){
+    	Order orderEntity  = orderRepository.findById(orderId).get();
+    	return RestaurantUtil.convertOrderEntityToOrderModel(orderEntity);
+    } 
 }

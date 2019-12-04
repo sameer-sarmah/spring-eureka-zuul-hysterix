@@ -38,4 +38,9 @@ public class DeliveryController {
         deliveryService.assignAgent(delivery);
     }
     
+    @GetMapping(value="delivery/{orderId}",produces = "application/json")
+    public Delivery getDelivery(@PathVariable Long orderId) {
+    	return deliveryService.getDelivery(orderId);
+    }
+    
 }
